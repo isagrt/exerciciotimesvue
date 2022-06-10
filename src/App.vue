@@ -22,7 +22,7 @@ import FooterComp from '@/components/template/FooterComp.vue';
 }
 
 footer {
-  background-color: #00581b;
+  background-color: #d89ae7;
   height: 15%;
   font-size: 1.3rem;
   padding-left: 2rem;

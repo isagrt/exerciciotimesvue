@@ -80,7 +80,7 @@ export default {
   height: 40px;
   border: 1px solid rgb(211, 211, 211);
   border-radius: 10px;
-  background-color: rgb(227, 170, 0);
+  background-color: #d89ae7;
   color: rgb(255, 255, 255);
   font-weight: bold;
   cursor: pointer;
