@@ -1,4 +1,5 @@
   <script>
+  import {v4 as uuidv4} from "uuid"
  export default {
    data() {
      return {
@@ -9,9 +10,21 @@
          {id: 'e8c96c5b-4e96-4eec-93f8-b43b351e4a27', nome: 'Paul George', time: 'Los Angeles Clippers'},    
          {id: 'a1f5e3d3-5d04-46f5-bc6f-185d46a28993', nome: 'Nikola Jokic', time:'Denver Nuggets'}
         ],
+        novo_jogador: "",
+        novo_time: "exemplo",
      };
    },
- }
+   methods: {
+     salvar() {
+       const novo_id = uuidv4();
+       this.jogadores.push({
+         id: novo_id,
+         nome: this.novo_jogador,
+         time: this.novo_time
+       });
+     },
+   },
+ };
   </script>
   <template>
   <main>
@@ -20,8 +33,8 @@
         <h2>Gerenciamento de Jogadores</h2>
       </div>
       <div class="form-input">
-        <input type="text" />
-        <button>Salvar</button>
+        <input type="text" v-model="novo_jogador" />
+        <button @click="salvar">Salvar</button>
       </div>
       <div class="list-jogadores">
         <table>
@@ -70,7 +83,7 @@
   height: 40px;
   border: 1px solid rgb(211, 211, 211);
   border-radius: 10px;
-  background-color: #d89ae7;
+  background-color: #d194e0;
   color: rgb(255, 255, 255);
   font-weight: bold;
   cursor: pointer;
