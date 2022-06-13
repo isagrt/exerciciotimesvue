@@ -6,28 +6,28 @@ export default {
       times: [
         {
           id: "01986caa-0a42-4eef-9d11-25c77fd98df1",
-          nome: "Boston Celtics",
-          estadio: "TD Garden",
+          nome: "Dentil Praia Clube-MG",
+          estadio: "Praia Clube",
         },
         {
           id: "19be6257-67d9-413a-a0ff-840a8acaba75",
-          nome: "Los Angeles Clippers",
-          estadio: "Staples Center",
+          nome: "Osasco-SP",
+          estadio: "José Liberatti",
         },
         {
           id: "520465a6-36e2-4554-9499-d2ed6209b9e7",
-          nome: "Portland Trailblazers",
-          estadio: "Moda Center",
+          nome: "Itambé Minas-MG",
+          estadio: "Arena Minas Tênis Clube",
         },
         {
           id: "632a0b5e-41f2-4acb-8c36-019b10f81ade",
-          nome: "Denver Nuggets",
-          estadio: "Pepsi Center",
+          nome: "Barueri-SP",
+          estadio: " José Correa",
         },
         {
           id: "9db7a2ed-e1c2-43b2-b222-47a64a860427",
-          nome: "Minnesota Timberwolves",
-          estadio: "Target Center",
+          nome: "Flamengo",
+          estadio: "Tijuca Tênis Clube",
         },
       ],
       novo_time: "",
@@ -35,13 +35,20 @@ export default {
   },
   methods: {
     salvar() {
+      if (this.novo_time !== ""){}
       const novo_id = uuidv4();
       this.times.push({
         id: novo_id,
         nome: this.novo_time,
       });
+      this.novo_time = "";
     },
+  excluir(time){
+    const indice = this.times.indexOf(time);
+    
   },
+  },
+  
 };
 </script>
 <template>
@@ -68,7 +75,10 @@ export default {
             <tr v-for="time in times" :key="time.id">
               <td>{{ time.id }}</td>
               <td>{{ time.nome }}</td>
-              <td>??</td>
+              <td>
+                <button>Editar</button>
+                <button @click="excluir(time)">Excluir</button>
+              </td>
               <td>{{ time.estadio }}</td>
             </tr>
           </tbody>
