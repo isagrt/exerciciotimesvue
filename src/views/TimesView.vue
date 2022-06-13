@@ -45,7 +45,7 @@ export default {
     },
   excluir(time){
     const indice = this.times.indexOf(time);
-    
+    this.times.splice(indice, 1)
   },
   },
   
