@@ -25,6 +25,10 @@
        });
        this.novo_jogador = "";
      },
+     excluir(jogadores){
+    const indice = this.jogadores.indexOf(jogadores);
+    this.jogadores.splice(indice, 1)
+  },
    },
  };
   </script>
@@ -54,7 +58,7 @@
               <td>{{jogadores.nome}}</td>
               <td>
               <button>Editar</button>
-              <button>Excluir</button>
+              <button @click="excluir(jogadores)">Excluir</button>
               </td>
               <td>{{jogadores.time}}</td>
             </tr>
